@@ -44,6 +44,19 @@ alphaOrder(ex);
  * @return {number} count of vowels
  * ie: "oreo" => 3
  */
+var exNum = "tofu burger"
+function vowelCount(num) {
+    var splitStr = num.split("");
+    // console.log(splitStr);
+    var count = 0;
+    for (var i=0; i<splitStr.length; i++) {
+        if (splitStr[i].match(/[aeiouAEIOU]/)) {
+            count += 1;
+        }
+    }
+    console.log(count);
+}
+vowelCount(exNum);
 
  /** Function: timeConvert
  * The function will take the str parameter representing the amount of minutes being passed in and
