@@ -5,6 +5,20 @@
  * @return {string} reversed
  * ie: "cat" => "tac"
  */
+var ex = "blueberry cheesecake"
+function firstReverse(str) {
+    var splitStr = str.split("");
+    // console.log(splitStr);
+    var newArr = []
+    for (var i=splitStr.length-1; i>=0; i--) {
+        newArr.push(splitStr[i]);
+        // console.log(newArr)
+    }
+    var newStr = newArr.join("");
+    console.log(newStr);
+}
+firstReverse(ex);
+
 
  /** Function: alphaOrder
  * The function will take the str parameter being passed in and
@@ -13,6 +27,15 @@
  * @return {string} in alphabetical order
  * ie: "cake" => "acek"
  */
+function alphaOrder(str) {
+    var splitStr = str.split("");
+    // console.log(splitStr);
+    var sort = splitStr.sort();
+    // console.log(sort);
+    var newStr = sort.join("");
+    console.log(newStr);
+}
+alphaOrder(ex);
 
  /** Function: vowelCount
  * The function will take the num parameter being passed in and
