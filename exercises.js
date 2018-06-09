@@ -66,6 +66,16 @@ vowelCount(exNum);
  * @return {string} as hours:minutes
  * ie: 68 => 1:8
  */
+var min = 130;
+function timeConvert(str) {
+    var hour = 0;
+    while (str >= 60) {
+        hour += 1;
+        str -= 60; 
+    }
+    console.log(hour + ":" + str);
+}
+timeConvert(min);
 
  /** Function: repeatString
  * The function will take in two parameters and repeat a given string (first argument)
