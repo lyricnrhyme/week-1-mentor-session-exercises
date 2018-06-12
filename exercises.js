@@ -96,12 +96,16 @@ function timeConvert(str) {
  * i.e repeatString("money", 3) => "moneymoneymoney".
  */
 function repeatString(str, times) {
-    var repeating = []
-    for (var i=0; i<times; i++) {
-        repeating.push(str);
+    if (typeof str == "string" && typeof times == "number") {
+        var repeating = []
+        for (var i=0; i<times; i++) {
+            repeating.push(str);
+        }
+        var joined = repeating.join("");
+        return joined;
+    } else {
+        return null;
     }
-    var joined = repeating.join("");
-    console.log(joined);
 }
 
 /**
