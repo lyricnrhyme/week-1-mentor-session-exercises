@@ -5,8 +5,8 @@
  * @return {string} reversed
  * ie: "cat" => "tac"
  */
-var ex = "blueberry cheesecake"
 function firstReverse(str) {
+    if (typeof str == "string") {
     var splitStr = str.split("");
     // console.log(splitStr);
     var newArr = []
@@ -16,8 +16,11 @@ function firstReverse(str) {
     }
     var newStr = newArr.join("");
     console.log(newStr);
+    return newStr;
+    } else {
+        return null;
+    }
 }
-firstReverse(ex);
 
 
  /** Function: alphaOrder
@@ -28,14 +31,17 @@ firstReverse(ex);
  * ie: "cake" => "acek"
  */
 function alphaOrder(str) {
-    var splitStr = str.split("");
-    // console.log(splitStr);
-    var sort = splitStr.sort();
-    // console.log(sort);
-    var newStr = sort.join("");
-    console.log(newStr);
+    if (typeof str == "string") {
+        var splitStr = str.split("");
+        // console.log(splitStr);
+        var sort = splitStr.sort();
+        // console.log(sort);
+        var newStr = sort.join("");
+    } else {
+        return null;
+    }
+    return newStr;
 }
-alphaOrder(ex);
 
  /** Function: vowelCount
  * The function will take the num parameter being passed in and
@@ -44,7 +50,6 @@ alphaOrder(ex);
  * @return {number} count of vowels
  * ie: "oreo" => 3
  */
-var exNum = "tofu burger"
 function vowelCount(num) {
     var splitStr = num.split("");
     // console.log(splitStr);
@@ -56,7 +61,6 @@ function vowelCount(num) {
     }
     console.log(count);
 }
-vowelCount(exNum);
 
  /** Function: timeConvert
  * The function will take the str parameter representing the amount of minutes being passed in and
@@ -66,7 +70,6 @@ vowelCount(exNum);
  * @return {string} as hours:minutes
  * ie: 68 => 1:8
  */
-var min = 130;
 function timeConvert(str) {
     var hour = 0;
     while (str >= 60) {
@@ -75,7 +78,6 @@ function timeConvert(str) {
     }
     console.log(hour + ":" + str);
 }
-timeConvert(min);
 
  /** Function: repeatString
  * The function will take in two parameters and repeat a given string (first argument)
@@ -93,7 +95,6 @@ function repeatString(str, times) {
     var joined = repeating.join("");
     console.log(joined);
 }
-repeatString("pizza", 8);
 
 /**
  * Below here we see a module.exports which is set to an object with a bunch of keys.
@@ -110,9 +111,9 @@ repeatString("pizza", 8);
  */
 
 module.exports = {
-    firstReverse: null,
-    alphaOrder: null,
-    vowelCount: null,
-    timeConvert: null,
-    repeatString: null
+    firstReverse: firstReverse,
+    alphaOrder: alphaOrder,
+    vowelCount: vowelCount,
+    timeConvert: timeConvert,
+    repeatString: repeatString
 }
