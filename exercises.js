@@ -51,15 +51,19 @@ function alphaOrder(str) {
  * ie: "oreo" => 3
  */
 function vowelCount(num) {
-    var splitStr = num.split("");
-    // console.log(splitStr);
-    var count = 0;
-    for (var i=0; i<splitStr.length; i++) {
-        if (splitStr[i].match(/[aeiouAEIOU]/)) {
-            count += 1;
+    if (typeof num == "string") {
+        var splitStr = num.split("");
+        // console.log(splitStr);
+        var count = 0;
+            for (var i=0; i<splitStr.length; i++) {
+                if (splitStr[i].match(/[aeiouAEIOU]/)) {
+                count += 1;
+            }
         }
+    } else {
+        return null;
     }
-    console.log(count);
+    return count;
 }
 
  /** Function: timeConvert
