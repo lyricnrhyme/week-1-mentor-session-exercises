@@ -75,12 +75,16 @@ function vowelCount(num) {
  * ie: 68 => 1:8
  */
 function timeConvert(str) {
-    var hour = 0;
-    while (str >= 60) {
-        hour += 1;
-        str -= 60; 
+    if (typeof str == "number") {
+        var hour = 0;
+        while (str >= 60) {
+            hour += 1;
+            str -= 60; 
+        }
+        return hour + ":" + str;
+    } else {
+        return null;
     }
-    console.log(hour + ":" + str);
 }
 
  /** Function: repeatString
